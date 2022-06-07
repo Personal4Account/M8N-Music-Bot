@@ -51,10 +51,7 @@ from m8n.config import (
     DURATION_LIMIT,
     que,
     SUDO_USERS,
-    BOT_ID,
-    ASSNAME,
     ASSUSERNAME,
-    ASSID,
     SUPPORT,
     UPDATE,
     BOT_USERNAME,
@@ -259,7 +256,7 @@ async def play(_, message: Message):
         b = await app.get_chat_member(message.chat.id, ASSID)
         if b.status == "kicked":
             await message.reply_text(
-                f"🔴 {ASSNAME} (@{ASSUSERNAME}) is banned in your chat **{message.chat.title}**\n\nUnban it first to use music"
+                f"🔴 @{ASSUSERNAME} is banned in your chat **{message.chat.title}**\n\nUnban it first to use music"
             )
             return
     except UserNotParticipant:
@@ -267,7 +264,7 @@ async def play(_, message: Message):
             try:
                 await ASS_ACC.join_chat(f"{message.chat.username}")
                 await message.reply(
-                    f"✅ **{ASSNAME} joined successfully**",
+                    f"✅ **joined successfully**",
                 )
                 await remove_active_chat(chat_id)
             except Exception as e:
@@ -283,7 +280,7 @@ async def play(_, message: Message):
                     link_bokep = f"https://t.me/joinchat/{kontol}"
                 await ASS_ACC.join_chat(link_bokep)
                 await message.reply(
-                    f"✅ **{ASSNAME} joined successfully**",
+                    f"✅ **joined successfully**",
                 )
                 await remove_active_chat(message.chat.id)
             except UserAlreadyParticipant:
