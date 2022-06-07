@@ -20,6 +20,11 @@
             "required": true,
             "value": ""
         },
+        "BG_IMG": {
+            "description": "Fill with a Telegraph image Link for Thumbnail !!",
+            "required": true,
+            "value": ""
+        },
         "SUPPORT": {
             "description": "Fill with your support group username without @",
             "required": true,
